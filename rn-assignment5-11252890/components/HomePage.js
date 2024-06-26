@@ -5,6 +5,7 @@ import { StyleSheet, Text, View, ScrollView, FlatList, SafeAreaView, Image, Touc
 
 const HomePage = ({ route }) => {
 
+  
  const data = [
   {
     id: '1',

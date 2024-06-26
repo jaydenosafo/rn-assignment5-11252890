@@ -2,10 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Settings } from 'react-native';
 import HomePage from './components/HomePage';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, ThemeProvider } from '@react-navigation/native';
 import MyCards from './components/MyCards';
 import Statistics from './components/Statistics';
 import SettingsPage from './components/SettingsPage';
+
 
 
 const Tab = createBottomTabNavigator();
@@ -53,9 +54,12 @@ function MyTabs() {
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <ThemeProvider>
+      <NavigationContainer>
       <MyTabs />
     </NavigationContainer>
+    </ThemeProvider>
+    
   );
 }
 
