@@ -1,8 +1,11 @@
 import React from 'react'
+import {View, Text} from 'react-native'
 
 const MyCards = () => {
   return (
-  <View></View>
+  <View>
+    <Text>MyCards</Text>
+  </View>
   );
 }
 

@@ -41,7 +41,7 @@ const SettingsPage = () => {
         <View style={styles.line}/>
 
         <View style={isEnabled? styles.themeSwitchDark : styles.themeSwitchLight}>
-          <Text style={isEnabled? styles.itemThemeDark : styles.itemThemeLight}>Theme</Text>
+          <Text style={isEnabled? styles.itemThemeDarks : styles.itemThemeLights}>Theme</Text>
           <Switch
             trackColor={{false: '#767577', true: 'green'}}
             thumbColor={isEnabled? '#fff' : '#f4f3f4'}
@@ -132,6 +132,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginRight: 10,
     color: 'white'
+  },
+  itemThemeLights: {
+    fontSize: 25,
+    marginRight: 10,
+    color: 'black',
+    fontWeight: 'bold'
+  },
+  itemThemeDarks: {
+    fontSize: 25,
+    marginRight: 10,
+    color: 'white',
+    fontWeight: 'bold'
   }
 });
 

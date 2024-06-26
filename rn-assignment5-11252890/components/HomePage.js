@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   flatList: {
-    marginTop: 20
+    marginTop: 15
   }
 });
 
