@@ -1,16 +1,18 @@
-import { createContext, useState } from 'react';
+// ThemeContext.js
+import React, { createContext, useState } from 'react';
 
-const ThemeContext = createContext();
+export const ThemeContext = createContext();
 
-const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('light');
+export const ThemeProvider = ({ children }) => {
   const [isEnabled, setIsEnabled] = useState(false);
 
+  const toggleTheme = () => {
+    setIsEnabled(prevState => !prevState);
+  };
+
   return (
-    <ThemeContext.Provider value={{ theme, isEnabled, setTheme, setIsEnabled }}>
+    <ThemeContext.Provider value={{ isEnabled, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
 };
-
-export { ThemeProvider, ThemeContext };

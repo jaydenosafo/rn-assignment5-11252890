@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Switch } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+import { ThemeContext } from '../components/ThemeContext';
 
 const SettingsPage = () => {
-  const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState =>!previousState);
-
+  const { isEnabled, toggleTheme } = useContext(ThemeContext);
+ 
   return (
     <View style={isEnabled? styles.containerDark : styles.containerLight}>
       <View style={styles.titleContainer}>
@@ -46,7 +46,7 @@ const SettingsPage = () => {
             trackColor={{false: '#767577', true: 'green'}}
             thumbColor={isEnabled? '#fff' : '#f4f3f4'}
             ios_backgroundColor="#3e3e3e"
-            onValueChange={toggleSwitch}
+            onValueChange={toggleTheme}
             value={isEnabled}
           />
         </View>

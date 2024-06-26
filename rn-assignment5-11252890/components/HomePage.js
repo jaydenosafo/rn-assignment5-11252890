@@ -1,11 +1,11 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { StyleSheet, Text, View, ScrollView, FlatList, SafeAreaView, Image, TouchableOpacity } from 'react-native';
-
+import { ThemeContext } from '../components/ThemeContext';
 
 
 const HomePage = ({ route }) => {
 
-  
+  const { isEnabled } = useContext(ThemeContext);
  const data = [
   {
     id: '1',
@@ -45,7 +45,7 @@ const HomePage = ({ route }) => {
  ]
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={isEnabled ? styles.containerDark : styles.containerLight}>
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.profile}>
